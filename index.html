@@ -1,157 +1,276 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEXUS - Immersive DeFi Experience</title>
-    <meta name="description" content="Journey through a surreal digital landscape of decentralized finance">
-    <meta name="theme-color" content="#0a0e27">
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-</head>
-<body>
-    <canvas id="canvas"></canvas>
-    
-    <!-- Overlay UI -->
-    <div class="overlay">
-        <!-- Header -->
-        <header class="header">
-            <div class="logo">◇ NEXUS</div>
-            <nav class="nav">
-                <a href="#" class="nav-link">Explore</a>
-                <a href="#" class="nav-link">Trade</a>
-                <a href="#" class="nav-link">Earn</a>
-            </nav>
-            <button class="connect-btn">Connect Wallet</button>
-        </header>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fantasy World Portfolio</title><style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
 
-        <!-- Main Content Sections -->
-        <section class="hero">
-            <div class="hero-content">
-                <h1 class="title-main">ENTER<br>THE<br>NEXUS</h1>
-                <p class="subtitle">Where Dreams Meet Decentralization</p>
-                <button class="cta-btn">Begin Your Journey</button>
-                <div class="scroll-hint">Scroll to Explore</div>
-            </div>
-        </section>
+body{
+overflow-x:hidden;
+background:#02030a;
+color:white;
+}
 
-        <!-- Experience Sections -->
-        <section class="experience trade-section" data-section="trade">
-            <div class="content-block">
-                <h2 class="section-title">THE MARKET REALM</h2>
-                <p class="section-description">
-                    Trade across infinite liquidity pools. Watch real-time flows visualize as living streams of data.
-                </p>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-value">$2.4B</div>
-                        <div class="stat-label">Total Liquidity</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value">0.02%</div>
-                        <div class="stat-label">Lowest Fees</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value">24/7</div>
-                        <div class="stat-label">Always Trading</div>
-                    </div>
-                </div>
-            </div>
-        </section>
+canvas{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
+}
 
-        <section class="experience farm-section" data-section="farm">
-            <div class="content-block">
-                <h2 class="section-title">THE HARVEST GARDENS</h2>
-                <p class="section-description">
-                    Plant your capital and watch it grow through yield farming. Witness compound growth bloom before your eyes.
-                </p>
-                <div class="yield-display">
-                    <div class="yield-item">
-                        <div class="yield-icon">🌱</div>
-                        <div class="yield-text">
-                            <div class="yield-title">Premium Pairs</div>
-                            <div class="yield-rate">240% APY</div>
-                        </div>
-                    </div>
-                    <div class="yield-item">
-                        <div class="yield-icon">🌿</div>
-                        <div class="yield-text">
-                            <div class="yield-title">Stable Sanctuary</div>
-                            <div class="yield-rate">18% APY</div>
-                        </div>
-                    </div>
-                    <div class="yield-item">
-                        <div class="yield-icon">🍃</div>
-                        <div class="yield-text">
-                            <div class="yield-title">Ecosystem Growth</div>
-                            <div class="yield-rate">85% APY</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:20px;
+}
 
-        <section class="experience governance-section" data-section="governance">
-            <div class="content-block">
-                <h2 class="section-title">THE GOVERNANCE TOWER</h2>
-                <p class="section-description">
-                    Your voice shapes reality. Vote on proposals that reshape the landscape itself.
-                </p>
-                <div class="governance-stats">
-                    <div class="gov-item">
-                        <div class="gov-number">187</div>
-                        <div class="gov-label">Active Proposals</div>
-                    </div>
-                    <div class="gov-item">
-                        <div class="gov-number">45.2K</div>
-                        <div class="gov-label">Voting Members</div>
-                    </div>
-                    <div class="gov-item">
-                        <div class="gov-number">98.7%</div>
-                        <div class="gov-label">Participation</div>
-                    </div>
-                </div>
-            </div>
-        </section>
+.hero h1{
+font-size:clamp(4rem,12vw,10rem);
+line-height:0.9;
+text-transform:uppercase;
+letter-spacing:5px;
+text-shadow:0 0 40px rgba(255,255,255,.3);
+}
 
-        <section class="experience bridge-section" data-section="bridge">
-            <div class="content-block">
-                <h2 class="section-title">THE DIMENSIONAL BRIDGE</h2>
-                <p class="section-description">
-                    Cross between chains seamlessly. Teleport your assets across multiple dimensions of blockchain reality.
-                </p>
-                <div class="bridge-network">
-                    <div class="chain-node">Ethereum</div>
-                    <div class="chain-node">Polygon</div>
-                    <div class="chain-node">Arbitrum</div>
-                    <div class="chain-node">Optimism</div>
-                    <div class="chain-node">Base</div>
-                </div>
-            </div>
-        </section>
+.hero p{
+margin-top:20px;
+font-size:1.2rem;
+max-width:700px;
+opacity:.8;
+}
 
-        <!-- Footer -->
-        <footer class="footer">
-            <p>© 2024 NEXUS Protocol. Journey without end.</p>
-            <div class="footer-links">
-                <a href="#">Docs</a>
-                <a href="#">Discord</a>
-                <a href="#">Twitter</a>
-                <a href="#">GitHub</a>
-            </div>
-        </footer>
+.section{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:40px;
+}
 
-        <!-- Floating Indicators -->
-        <div class="floating-indicators">
-            <div class="indicator" data-index="0">◆</div>
-            <div class="indicator active" data-index="1">◆</div>
-            <div class="indicator" data-index="2">◆</div>
-            <div class="indicator" data-index="3">◆</div>
-            <div class="indicator" data-index="4">◆</div>
-        </div>
-    </div>
+.card{
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(20px);
+padding:40px;
+border-radius:30px;
+max-width:700px;
+border:1px solid rgba(255,255,255,.15);
+}
 
-    <script src="script.js"></script>
-</body>
+.card h2{
+font-size:3rem;
+margin-bottom:20px;
+}
+
+.card p{
+line-height:1.8;
+opacity:.8;
+}
+
+.scroll{
+position:absolute;
+bottom:40px;
+left:50%;
+transform:translateX(-50%);
+font-size:14px;
+letter-spacing:3px;
+animation:float 2s infinite;
+}
+
+@keyframes float{
+50%{transform:translate(-50%,15px);}
+}
+</style></head>
+<body><div class="hero">
+<div>
+<h1>DREAM<br>WORLD</h1>
+<p>
+A fantasy portfolio where every scroll feels like traveling through
+an interactive ecosystem floating beyond reality.
+</p>
+<div class="scroll">SCROLL TO EXPLORE</div>
+</div>
+</div><section class="section">
+<div class="card">
+<h2>Mountains</h2>
+<p>
+Massive dreamlike landscapes generated in real-time with WebGL.
+Each movement reveals a new layer of the world.
+</p>
+</div>
+</section><section class="section">
+<div class="card">
+<h2>Living Environment</h2>
+<p>
+Floating particles, magical creatures and cinematic depth create
+a living fantasy ecosystem around the portfolio.
+</p>
+</div>
+</section><section class="section">
+<div class="card">
+<h2>Creative Journey</h2>
+<p>
+Not a traditional website. A visual adventure designed to immerse
+visitors in storytelling and exploration.
+</p>
+</div>
+</section><script type="module">
+
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js';
+
+const scene = new THREE.Scene();
+scene.fog = new THREE.Fog(0x02030a,30,120);
+
+const camera = new THREE.PerspectiveCamera(
+75,
+window.innerWidth/window.innerHeight,
+0.1,
+1000
+);
+
+camera.position.set(0,5,20);
+
+const renderer = new THREE.WebGLRenderer({
+antialias:true
+});
+
+renderer.setSize(window.innerWidth,window.innerHeight);
+renderer.setPixelRatio(window.devicePixelRatio);
+document.body.appendChild(renderer.domElement);
+
+const ambient = new THREE.AmbientLight(0xffffff,1.2);
+scene.add(ambient);
+
+const light = new THREE.DirectionalLight(0xffffff,2);
+light.position.set(10,20,10);
+scene.add(light);
+
+const mountainGeometry = new THREE.ConeGeometry(4,12,6);
+
+for(let i=0;i<80;i++){
+
+const material = new THREE.MeshStandardMaterial({
+color:new THREE.Color(
+0.2+Math.random()*0.3,
+0.4+Math.random()*0.3,
+0.7+Math.random()*0.3
+),
+flatShading:true
+});
+
+const mountain = new THREE.Mesh(
+mountainGeometry,
+material
+);
+
+mountain.position.x=(Math.random()-0.5)*100;
+mountain.position.z=-Math.random()*200;
+mountain.position.y=-6;
+
+mountain.rotation.y=Math.random()*Math.PI;
+
+scene.add(mountain);
+
+}
+
+const particlesGeometry = new THREE.BufferGeometry();
+
+const count = 4000;
+const positions = new Float32Array(count*3);
+
+for(let i=0;i<count*3;i++){
+positions[i]=(Math.random()-0.5)*250;
+}
+
+particlesGeometry.setAttribute(
+'position',
+new THREE.BufferAttribute(positions,3)
+);
+
+const particlesMaterial = new THREE.PointsMaterial({
+size:0.15,
+color:0xffffff
+});
+
+const particles = new THREE.Points(
+particlesGeometry,
+particlesMaterial
+);
+
+scene.add(particles);
+
+const creatures=[];
+
+for(let i=0;i<20;i++){
+
+const geo=new THREE.SphereGeometry(0.4,16,16);
+
+const mat=new THREE.MeshStandardMaterial({
+color:0xffddaa,
+emissive:0xffaa55,
+emissiveIntensity:1
+});
+
+const creature=new THREE.Mesh(geo,mat);
+
+creature.position.set(
+(Math.random()-0.5)*50,
+Math.random()*15,
+-Math.random()*150
+);
+
+scene.add(creature);
+creatures.push(creature);
+
+}
+
+let scrollY=0;
+
+window.addEventListener('scroll',()=>{
+scrollY=window.scrollY;
+});
+
+function animate(){
+
+requestAnimationFrame(animate);
+
+particles.rotation.y+=0.0003;
+
+camera.position.z=20-scrollY*0.02;
+camera.position.y=5+scrollY*0.004;
+
+creatures.forEach((c,i)=>{
+c.position.x+=Math.sin(Date.now()*0.001+i)*0.01;
+c.position.y+=Math.cos(Date.now()*0.001+i)*0.01;
+});
+
+renderer.render(scene,camera);
+
+}
+
+animate();
+
+window.addEventListener('resize',()=>{
+
+camera.aspect=window.innerWidth/window.innerHeight;
+camera.updateProjectionMatrix();
+
+renderer.setSize(
+window.innerWidth,
+window.innerHeight
+);
+
+});
+
+</script></body>
 </html>
