@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS - Immersive DeFi Experience</title>
+    <meta name="description" content="Journey through a surreal digital landscape of decentralized finance">
+    <meta name="theme-color" content="#0a0e27">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    
+    <!-- Overlay UI -->
+    <div class="overlay">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">◇ NEXUS</div>
+            <nav class="nav">
+                <a href="#" class="nav-link">Explore</a>
+                <a href="#" class="nav-link">Trade</a>
+                <a href="#" class="nav-link">Earn</a>
+            </nav>
+            <button class="connect-btn">Connect Wallet</button>
+        </header>
+
+        <!-- Main Content Sections -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="title-main">ENTER<br>THE<br>NEXUS</h1>
+                <p class="subtitle">Where Dreams Meet Decentralization</p>
+                <button class="cta-btn">Begin Your Journey</button>
+                <div class="scroll-hint">Scroll to Explore</div>
+            </div>
+        </section>
+
+        <!-- Experience Sections -->
+        <section class="experience trade-section" data-section="trade">
+            <div class="content-block">
+                <h2 class="section-title">THE MARKET REALM</h2>
+                <p class="section-description">
+                    Trade across infinite liquidity pools. Watch real-time flows visualize as living streams of data.
+                </p>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value">$2.4B</div>
+                        <div class="stat-label">Total Liquidity</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">0.02%</div>
+                        <div class="stat-label">Lowest Fees</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">24/7</div>
+                        <div class="stat-label">Always Trading</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="experience farm-section" data-section="farm">
+            <div class="content-block">
+                <h2 class="section-title">THE HARVEST GARDENS</h2>
+                <p class="section-description">
+                    Plant your capital and watch it grow through yield farming. Witness compound growth bloom before your eyes.
+                </p>
+                <div class="yield-display">
+                    <div class="yield-item">
+                        <div class="yield-icon">🌱</div>
+                        <div class="yield-text">
+                            <div class="yield-title">Premium Pairs</div>
+                            <div class="yield-rate">240% APY</div>
+                        </div>
+                    </div>
+                    <div class="yield-item">
+                        <div class="yield-icon">🌿</div>
+                        <div class="yield-text">
+                            <div class="yield-title">Stable Sanctuary</div>
+                            <div class="yield-rate">18% APY</div>
+                        </div>
+                    </div>
+                    <div class="yield-item">
+                        <div class="yield-icon">🍃</div>
+                        <div class="yield-text">
+                            <div class="yield-title">Ecosystem Growth</div>
+                            <div class="yield-rate">85% APY</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="experience governance-section" data-section="governance">
+            <div class="content-block">
+                <h2 class="section-title">THE GOVERNANCE TOWER</h2>
+                <p class="section-description">
+                    Your voice shapes reality. Vote on proposals that reshape the landscape itself.
+                </p>
+                <div class="governance-stats">
+                    <div class="gov-item">
+                        <div class="gov-number">187</div>
+                        <div class="gov-label">Active Proposals</div>
+                    </div>
+                    <div class="gov-item">
+                        <div class="gov-number">45.2K</div>
+                        <div class="gov-label">Voting Members</div>
+                    </div>
+                    <div class="gov-item">
+                        <div class="gov-number">98.7%</div>
+                        <div class="gov-label">Participation</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="experience bridge-section" data-section="bridge">
+            <div class="content-block">
+                <h2 class="section-title">THE DIMENSIONAL BRIDGE</h2>
+                <p class="section-description">
+                    Cross between chains seamlessly. Teleport your assets across multiple dimensions of blockchain reality.
+                </p>
+                <div class="bridge-network">
+                    <div class="chain-node">Ethereum</div>
+                    <div class="chain-node">Polygon</div>
+                    <div class="chain-node">Arbitrum</div>
+                    <div class="chain-node">Optimism</div>
+                    <div class="chain-node">Base</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>© 2024 NEXUS Protocol. Journey without end.</p>
+            <div class="footer-links">
+                <a href="#">Docs</a>
+                <a href="#">Discord</a>
+                <a href="#">Twitter</a>
+                <a href="#">GitHub</a>
+            </div>
+        </footer>
+
+        <!-- Floating Indicators -->
+        <div class="floating-indicators">
+            <div class="indicator" data-index="0">◆</div>
+            <div class="indicator active" data-index="1">◆</div>
+            <div class="indicator" data-index="2">◆</div>
+            <div class="indicator" data-index="3">◆</div>
+            <div class="indicator" data-index="4">◆</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
