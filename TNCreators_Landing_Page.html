@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TN Creators</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
+body{background:#fff;color:#111}
+header{position:sticky;top:0;background:#fff;padding:15px 5%;display:flex;justify-content:space-between;box-shadow:0 2px 12px rgba(0,0,0,.08);z-index:1000}
+.logo{font-size:28px;font-weight:800;color:#e50914}
+.btn{background:#e50914;color:#fff;padding:14px 24px;border-radius:999px;text-decoration:none;font-weight:700}
+.hero{padding:80px 5%;display:flex;gap:40px;align-items:center;flex-wrap:wrap}
+.hero .left{flex:1;min-width:300px}
+.hero .right{flex:1;min-width:300px}
+h1{font-size:56px;line-height:1.1;margin-bottom:20px}
+.red{color:#e50914}
+.mock{height:420px;border-radius:24px;background:linear-gradient(135deg,#e50914,#ff5757);display:flex;align-items:center;justify-content:center;color:#fff;font-size:36px;font-weight:800}
+.section{padding:70px 5%}
+.title{text-align:center;font-size:40px;font-weight:800;margin-bottom:40px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{padding:25px;border-radius:18px;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.price{background:#e50914;color:#fff;border-radius:25px;padding:40px;text-align:center}
+.old{text-decoration:line-through;font-size:28px}
+.new{font-size:64px;font-weight:800}
+footer{background:#111;color:#fff;text-align:center;padding:40px}
+.float{position:fixed;right:20px;bottom:20px;background:#25D366;color:#fff;text-decoration:none;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px}
+.purchase-popup{position:fixed;left:15px;bottom:15px;background:#fff;padding:14px;border-left:5px solid #e50914;border-radius:12px;box-shadow:0 10px 25px rgba(0,0,0,.15);display:none;z-index:999}
+@media(max-width:768px){h1{font-size:38px}}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">TNCreators.in</div>
+<a class="btn" href="https://wa.me/916380376957?text=Hello%20TN%20Creators,%20I%20want%20to%20purchase%20the%20News%20Creator%20Bundle%20for%20₹199.">Get Access</a>
+</header>
+
+<section class="hero">
+<div class="left">
+<h1>Create Viral <span class="red">News Posts</span> In Minutes</h1>
+<p>100+ Canva Templates + 500+ AI Prompts for news creators, political pages and content creators.</p><br>
+<a class="btn" href="https://wa.me/916380376957?text=Hello%20TN%20Creators,%20I%20want%20to%20purchase%20the%20News%20Creator%20Bundle%20for%20₹199.">🔥 Get Bundle ₹199</a>
+</div>
+<div class="right"><div class="mock">NEWS CREATOR BUNDLE</div></div>
+</section>
+
+<section class="section">
+<h2 class="title">What's Inside</h2>
+<div class="grid">
+<div class="card">100+ Canva News Templates</div>
+<div class="card">500+ AI Prompts</div>
+<div class="card">Political & Breaking News Designs</div>
+<div class="card">YouTube Thumbnail Templates</div>
+</div>
+</section>
+
+<section class="section">
+<div class="price">
+<div class="old">₹999</div>
+<div class="new">₹199</div>
+<p>Lifetime Access • Instant WhatsApp Delivery</p><br>
+<a class="btn" style="background:white;color:#e50914" href="https://wa.me/916380376957?text=Hello%20TN%20Creators,%20I%20want%20to%20purchase%20the%20News%20Creator%20Bundle%20for%20₹199.">Buy Now</a>
+</div>
+</section>
+
+<section class="section">
+<h2 class="title">FAQ</h2>
+<div class="grid">
+<div class="card"><b>Can I use Canva Free?</b><br>Yes.</div>
+<div class="card"><b>How will I receive it?</b><br>Via WhatsApp.</div>
+<div class="card"><b>Lifetime access?</b><br>Yes.</div>
+</div>
+</section>
+
+<footer>
+<h2>TNCreators.in</h2>
+<p>Premium Canva Templates & AI Prompt Bundle</p>
+</footer>
+
+<a class="float" href="https://wa.me/916380376957?text=Hello%20TN%20Creators,%20I%20want%20to%20purchase%20the%20News%20Creator%20Bundle%20for%20₹199.">💬</a>
+
+<div id="purchase-popup" class="purchase-popup">🔥 Arun from Chennai recently purchased.</div>
+
+<script>
+const purchases=[["Arun","Chennai"],["Vijay","Madurai"],["Karthik","Coimbatore"],["Raj","Salem"],["Hari","Trichy"]];
+function showPopup(){
+ let p=purchases[Math.floor(Math.random()*purchases.length)];
+ let el=document.getElementById("purchase-popup");
+ el.innerHTML="🔥 "+p[0]+" from "+p[1]+" recently purchased.";
+ el.style.display="block";
+ setTimeout(()=>el.style.display="none",5000);
+ setTimeout(showPopup,10000+Math.random()*15000);
+}
+setTimeout(showPopup,4000);
+</script>
+</body>
+</html>
